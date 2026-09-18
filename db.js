@@ -30,7 +30,12 @@ const DB = {
 
   save() {
     const data = DB.db.export();
-    const b64 = btoa(String.fromCharCode(...data));
+    let binary = '';
+    const chunk = 8192;
+    for (let i = 0; i < data.length; i += chunk) {
+      binary += String.fromCharCode.apply(null, data.subarray(i, Math.min(i + chunk, data.length)));
+    }
+    const b64 = btoa(binary);
     try { localStorage.setItem(DB.STORAGE_KEY, b64); } catch (e) { console.warn('DB save failed', e); }
   },
 
