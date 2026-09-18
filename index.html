@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>采购管理系统 V1.1.18 网页版</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="theme-light" id="app-body">
+  <!-- 标题栏 -->
+  <div id="title-bar">
+    <button id="btn-collapse" class="title-btn" title="折叠侧边栏">
+      <svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="4" x2="6" y2="12" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+    <span id="page-title">概览</span>
+    <div class="spacer"></div>
+    <span style="font-size:12px;color:var(--text-secondary);padding-right:12px">V1.1.18 网页版</span>
+  </div>
+
+  <!-- 底部容器 -->
+  <div id="bottom-container">
+    <div id="sidebar">
+      <div id="nav-area"></div>
+      <div id="nav-bottom">
+        <div class="nav-separator"></div>
+        <div class="nav-item icon-only" data-page="settings" title="设置">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div id="divider"></div>
+    <div id="main-area">
+      <div id="page-content"></div>
+    </div>
+  </div>
+
+  <!-- 模态弹窗 -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-box">
+      <div id="modal-header">
+        <span id="modal-title"></span>
+        <button id="modal-close" class="modal-close-btn">✕</button>
+      </div>
+      <div id="modal-body"></div>
+      <div id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-container"></div>
+
+  <!-- 右键菜单 -->
+  <div id="context-menu" class="hidden"></div>
+
+  <!-- 打印容器 -->
+  <div id="print-container" class="hidden"></div>
+
+  <!-- CDN: sql.js + SheetJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- 应用脚本 -->
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+  <script src="pages/dashboard.js"></script>
+  <script src="pages/packaging.js"></script>
+  <script src="pages/plan.js"></script>
+  <script src="pages/quotation.js"></script>
+  <script src="pages/query.js"></script>
+  <script src="pages/product_bom.js"></script>
+  <script src="pages/supplier.js"></script>
+  <script src="pages/compare.js"></script>
+  <script src="pages/contract.js"></script>
+  <script src="pages/collection.js"></script>
+  <script src="pages/purchase.js"></script>
+  <script src="pages/memo.js"></script>
+  <script src="pages/travel.js"></script>
+  <script src="pages/inventory.js"></script>
+  <script src="pages/settings.js"></script>
+</body>
+</html>
